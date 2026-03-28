@@ -17,7 +17,6 @@ public class Building extends Graphic {
         this.buildingType = buildingType;
     }
 
-
     @Override
     public String toString() {
         return "Building{" +
@@ -26,4 +25,8 @@ public class Building extends Graphic {
                 '}';
     }
 
+    @Override
+    public Building clone() {
+        return new Building(this.getHeightInPixels(), new BuildingType(this.getBuildingType().getType()));
+    }
 }
